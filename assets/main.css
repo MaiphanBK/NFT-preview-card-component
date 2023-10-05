@@ -1,0 +1,147 @@
+:root {
+  --main-color:hsl(215, 51%, 70%) ;
+  --sub-color:hsl(178, 100%, 50%) ;
+  --darkBlue1-color:hsl(217, 54%, 11%) ;
+  --darkBlue2-color:hsl(216, 50%, 16%) ;
+  --darkBlue3-color:hsl(215, 32%, 27%) ;
+  --white-color:hsl(0, 0%, 100%) ;
+  --main-font:"Outfit", sans-serif;
+}
+
+.hh-color {
+  color: var(--sub-color);
+}
+
+main {
+  /* Mobile screen */
+  /* Desktop screen */
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--darkBlue1-color);
+}
+@media only screen and (max-width: 375px) {
+  main {
+    /* CSS rules for mobile screens */
+  }
+}
+@media only screen and (min-width: 1440px) {
+  main {
+    /* CSS rules for desktop screens */
+  }
+}
+main .card {
+  width: 300px;
+  background-color: var(--darkBlue2-color);
+  box-shadow: 1px 1px 5px 0.5px #000;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-family: var(--main-font);
+}
+main .card .cover {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+main .card .cover .image-cover {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+main .card .cover .icon, main .card .cover .bg {
+  cursor: pointer;
+  display: none;
+}
+main .card .cover .icon {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 40%;
+  transition: 0.3s ease-out !important;
+}
+main .card .cover .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s ease-out !important;
+}
+main .card .cover .bg::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--sub-color);
+  opacity: 0.5;
+}
+main .card .cover:hover .icon, main .card .cover:hover .bg {
+  display: block;
+}
+main .card h5 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  transition: 0.2s ease-out;
+}
+main .card h5:hover {
+  color: var(--sub-color);
+}
+main .card p {
+  color: var(--main-color);
+}
+main .card .showTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .card .showTime span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+main .card .showTime span img {
+  width: 12px;
+}
+main .card .showTime p {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+main .card hr {
+  border: none;
+  border-top: 0.5px solid var(--darkBlue3-color);
+}
+main .card .profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main .card .profile img {
+  display: inline-flex;
+  max-width: 40px;
+  max-height: 40px;
+  border: 1.5px solid var(--white-color);
+  border-radius: 50%;
+}
+main .card .profile p span {
+  color: var(--white-color);
+}
+main .card .profile p span:hover {
+  color: var(--sub-color);
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+}
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=main.css.map */
